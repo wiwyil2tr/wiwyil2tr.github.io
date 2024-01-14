@@ -1,87 +1,65 @@
-  <!-- Add custom styles -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>wiwyil2tr</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-      background-color: #333;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-    }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+        }
 
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            letter-spacing: 5px;
+        }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-right: 1rem;
-      transition: all 0.3s ease;
-    }
+        .description {
+            font-size: 24px;
+            margin-bottom: 80px;
+            opacity: 0.7;
+        }
 
-    nav a:hover {
-      color: #f1c40f;
-    }
+        .links {
+            margin-bottom: 80px;
+        }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+        .links a {
+            color: #00ff00;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .links a:hover {
+            color: #ff0000;
+        }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 0;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
-
-    a {
-      color: #2980b9;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      color: #2c3e50;
-    }
-  </style>
-
-  <title>wiwyil2tr</title>
+        .footer {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>wiwyil2tr</h1>
-    <nav>
-      <a href="https://wiwyil2tr.github.io/jargal">Jargal Linux</a>
-      <a href="https://github.com/wiwyil2tr/">Github</a>
-    </nav>
-  </header>
-
-  <main>
-    <p>when I was young i listen to the radio.</p>
-
-    <h2>Links:</h2>
-    <ul>
-      <li><a href="https://wiwyil2tr.github.io/jargal">Jargal Linux</a></li>
-      <li><a href="https://github.com/wiwyil2tr/">Github</a></li>
-    </ul>
-  </main>
+    <div class="container">
+        <h1>wiwyil2tr</h1>
+        <p class="description">when i was young i listen to the radio.</p>
+        <div class="links">
+            <a href="https://wiwyil2tr.github.io/jargal">Jargal Linux</a>
+            <a href="https://github.com/wiwyil2tr/">Github</a>
+        </div>
+        <p class="footer">Designed by wiwyil2tr</p>
+    </div>
 </body>
 </html>
