@@ -225,8 +225,8 @@
 
     // Check connectivity for "google.com" and "archlinux.org" after the DOM has fully loaded
     document.addEventListener("DOMContentLoaded", function() {
-      checkConnectivity('https://google.com', 'Outer: Connected', 'Outer: Disconnected', 'status-inner');
-      checkConnectivity('https://archlinux.org', 'Inner: Connected', 'Inner: Disconnected', 'status-outer');
+      checkConnectivity('https://archlinux.org', 'Inner: Connected', 'Inner: Disconnected', 'status-inner');
+      checkConnectivity('https://google.com', 'Outer: Connected', 'Outer: Disconnected', 'status-outer');
     });
 
     // Update the form's action attribute based on the selected radio button value
