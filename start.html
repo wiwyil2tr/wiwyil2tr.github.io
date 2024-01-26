@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wiwyil2tr's Startpage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'monospace', sans-serif;
+      background-color: #0f0f0f;
+      color: #00bfff;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3em;
+  text-shadow: 2px 2px 4px #0000ff;
+              opacity: 0.9;
+      margin-bottom: 50px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      font-size: 16px;
+      border: none;
+      background-color: #222222;
+      color: #00bfff;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #00bfff;
+      color: black;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    input[type="submit"]:hover {
+      background-color: #003153;
+    }
+    nav {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      background-color: #222222;
+      color: #00bfff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+    }
+    .nav-link:hover {
+      background-color: #003153;
+    }
+    .icon {
+      margin-bottom: 10px;
+      width: 50px; /* Adjust the size of the icon */
+      height: 50px;
+    }
+    #status {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #222222;
+      color: #00bfff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+    }
+
+    /* Add styles for each status line */
+    .status-line {
+      margin-top: 10px;
+    }
+
+    /* Add styles for radio buttons */
+    #radio-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    #radio-buttons input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    /* Add styles for search form container */
+    #search-form-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    /* Add styles for search form */
+    #search-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+
+
+
+</head>
+<body>
+  <div id="status">
+    <div id="status-inner" class="status-line">Inner: Checking</div>
+    <div id="status-outer" class="status-line">Outer: Checking</div>
+  </div>
+
+  <h1>wiwyil2tr's Startpage</h1>
+
+  <div id="search-form-container">
+    <form id="search-form" method="GET" target="_blank">
+      <input type="text" name="q" placeholder="Search the web...">
+        </br>
+               <input type="submit" value="Search">
+      <div id="radio-buttons">
+        <label>
+          <input type="radio" name="radio-button-group" value="https://www.google.com/search?q=" checked>
+          Google
+        </label>
+        <label>
+          <input type="radio" name="radio-button-group" value="https://www.bing.com/search?q=">
+          Bing
+        </label>
+        <label>
+          <input type="radio" name="radio-button-group" value="https://aur.archlinux.org/packages/?O=0&K=">
+          AUR
+        </label>
+        <label>
+          <input type="radio" name="radio-button-group" value="https://archlinux.org/packages/?q=">
+          Arch Linux Packages
+        </label>
+        <label>
+          <input type="radio" name="radio-button-group" value="https://www.baidu.com/s?wd=">
+          Baidu
+        </label>
+        <label>
+          <input type="radio" name="radio-button-group" value="https://zlibrary-east.se/s/">
+          Z-Library
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <nav>
+    <a class="nav-link" href="https://github.com">
+      <img class="icon" src="https://github.com/favicon.ico" alt="GitHub">
+      GitHub
+    </a>
+    <a class="nav-link" href="https://stackoverflow.com">
+      <img class="icon" src="https://stackoverflow.com/favicon.ico" alt="Stack Overflow">
+      Stack Overflow
+    </a>
+    <a class="nav-link" href="https://archwiki.org">
+      <img class="icon" src="https://archwiki.org/favicon.ico" alt="Archwiki">
+      Archwiki
+    </a>
+    <a class="nav-link" href="file:///home/user/Documents/cybersecurity/Books/books.html">
+      <i class="icon fas fa-book"></i>
+      Cybersecurity Book List
+    </a>
+    <a class="nav-link" href="https://12306.cn">
+      <i class="icon fas fa-book"></i>
+      12306
+    </a>
+    <a class="nav-link" href="https://youtube.com">
+      <img class="icon" src="https://youtube.com/favicon.ico" alt="Youtube">
+      Youtube
+    </a>
+    <a class="nav-link" href="https://bilibili.com">
+      <img class="icon" src="https://bilibili.com/favicon.ico" alt="Bilibili">
+      Bilibili
+    </a>
+    <a class="nav-link" href="https://csdiy.wiki">
+      <i class="icon fas fa-book"></i>
+      CS Self-Learning
+    </a>
+    <a class="nav-link" href="https://wiwyil2tr.github.io">
+      <i class="icon fas fa-book"></i>
+      wiwyil2tr blog
+    </a>
+  </nav>
+
+  <script>
+    // Function to check connectivity to a given URL
+    async function checkConnectivity(url, successMessage, errorMessage, statusElementId) {
+      try {
+        const response = await fetch(url, { mode: 'no-cors' });
+        if (response.ok || response.type === 'opaque') {
+          setStatus(successMessage, statusElementId);
+        } else {
+          setStatus(errorMessage, statusElementId);
+        }
+      } catch (error) {
+        setStatus(errorMessage, statusElementId);
+      }
+    }
+
+    // Function to update the status display
+    function setStatus(message, statusElementId) {
+      document.getElementById(statusElementId).textContent = message;
+    }
+
+    // Check connectivity for "google.com" and "archlinux.org" after the DOM has fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      checkConnectivity('https://google.com', 'Inner: Connected', 'Inner: Disconnected', 'status-inner');
+      checkConnectivity('https://archlinux.org', 'Outer: Connected', 'Outer: Disconnected', 'status-outer');
+    });
+
+    // Update the form's action attribute based on the selected radio button value
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const searchEngineUrl = document.querySelector('input[name="radio-button-group"]:checked').value;
+      const searchTerm = document.querySelector('input[name="q"]').value;
+
+      const searchUrl = searchEngineUrl + encodeURIComponent(searchTerm);
+
+      window.open(searchUrl, '_blank'); // Open the search URL in a new tab
+    });
+  </script>
+</html>
+
