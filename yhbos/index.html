@@ -1,114 +1,264 @@
- <!DOCTYPE html>
-<html>
-        <link rel="stylesheet" type="text/css" href="style.css">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>SULET 优化版Linux</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/log.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优化版Linux - 开箱即用的纯净体验</title>
+    <style>
+        body {
+            font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+            color: #333;
+            background-color: #f0f0f0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwZjBmMCIvPjwvc3ZnPg==');
+            background-repeat: repeat;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(to bottom, #88a5d1, #577db6);
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            color: white;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .nav {
+            background-color: #e6e6e6;
+            padding: 10px;
+            border-bottom: 1px solid #cccccc;
+            border-radius: 0 0 8px 8px;
+        }
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .main-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            margin-left: 20px;
+        }
+        h2 {
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 5px;
+            color: #577db6;
+        }
+        a {
+            color: #577db6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .feature-list {
+            margin-left: 20px;
+            list-style-type: square;
+            color: #000000;
+        }
+        .software-list {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        .download-section {
+            background-color: #f9f9f9;
+            border: 1px solid #cccccc;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .donation {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            border-top: 1px solid #cccccc;
+            color: #666;
+            font-size: 12px;
+        }
+        .install-instructions {
+            background-color: #f0f0f0;
+            border: 1px solid #cccccc;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .install-indent {
+            margin-left: 20px;
+        }
+        .version-info {
+            display: inline-block;
+            margin-top: 10px;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #577db6;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #3a5d8c;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #4568a6;
+        }
+        .btn-group {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .disclaimer {
+            background-color: #fff3f3;
+            border: 1px solid #ff9999;
+            color: #cc0000;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body bgcolor=#232627>
-	<header>
-<marquee
-align="top";
-height=42px
-bgcolor="#003153";
-width="100%";
-scrolldelay="1";
-loop="-1";
-		><font face=monospace size=10px color="#ffffff">欢迎使用  <font face=Canterbury size=8px>优化版Linux</font> !</font></marquee>
-	</header>
- <div>
-        <table>
-            <tr>
-                <td class="thh" width="25%">
-					<p align="left"><img src="" width="100" title="Jargal Linux Logo"<p> <font size="+6" color="#ffffff" face="Canterbury">优化版Debian</br><font size=+1 face=sans>基于Debian testing的定制版</font></font><center></p></p>
-									</br>
-									</br>
-									<table>
-                        <tr>
-							<th>链接</th>
-                        </tr>
-                        <tr>
-                            <td><a href="https://wiwyil2tr.github.io/yhbos">首页</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.123pan.com/s/jR1SVv-GPB6d.html">下载</a></td>
-                    </table>
-				</td>
-
-                <td id="content">
-					<div class="div12">
-						
-	<p align=center><font face=sans size=+1></br>
-		<img src="https://storage.deepin.org/thread/202407090936433256_1A7ADD13949CF24A9CCDEfd8820F025AC2.png" width="100%"></p></br>
-	<p align=center><font face=sans size=+1><img src="https://storage.deepin.org/thread/20240709093704884_Screenshot_20240709_172823.png" width="100%"></p></p>	</br>				
-
-						<p align=center>优化版Linux Debian v3.0制作完成</br>
-优化版Debian V3.0</br>
-</br>
---By wiwyil2tr@gmail.com</br>
-</br>
-</br></br></br><button class="button1"> <a href="https://www.123pan.com/s/jR1SVv-GPB6d.html"><font size=+2>下载</font></a></button></img></font></p></br>
-本次更新主要内容：</br>
-</br>
-    更新debian testing到最新</br>
-    改用mate桌面环境</br>
-    视频播放器改用更易于操作的smplayer</br>
-    删除一些不必要的软件包</br>
-</br>
-优化版系统特性：</br>
-</br>
-    预装常用驱动程序</br>
-    基于debian testing，滚动更新， 软件始终保持最新</br>
-    稳定性高，真机实测，debian是一个以稳定性著称的发行版</br>
-    集成常用软件，包括办公，网页浏览，图片处理，输入法等，开箱即用</br>
-    完全纯净，无广告，无捆绑</br>
-    人性化操作，采用广受欢迎的gnome2桌面的延续-mate桌面环境，经典易于上手</br>
-    轻量高效，占用资源低，可以充分发挥电脑性能</br>
-</br>
-预装的部分常用软件</br>
-</br>
-    办公：libreoffice</br>
-    浏览器：火狐浏览器</br>
-    邮件：thunderbird</br>
-    视频播放器：smplayer</br>
-    音频播放器：audacious</br>
-    图片处理：gimp</br>
-    命令查询：tldr</br>
-    输入法：fcitx</br>
-    星火应用商店，即深度社区商店，具有大量国人常用软件如qq，微信，wps等</br>
-
-新手尝试Linux时可以一试，不喜勿喷</br>
-</br>
-基本上能做到开箱即用,想在真机上装debian的新手可以试试</br>
-</br>
-安装教程: 先在U盘内安装ventoy,详见https://www.ventoy.net 安装好后将镜像复制到U盘分区内</br>
-</br>
-从U盘启动,选择sulet-optimized-debian-live-testing-v3-amd64-mate.iso启动项</br>
-</br>
-启动后,选择最上面第一项回车</br>
-</br>
-启动后,点击桌面上的"Install Debian"就可以安装了,具体步骤详见manjaro的安装教程视频</br>
-</br>
-安装完成后, 更改一下软件源(位于/etc/apt/sources.list)，可以在网上自行搜索软件源, 然后把版本改成 testing ,再更新一下软件源"sudo apt update"就可以使用了</br> -----------------------------------------------------------------------
-</br>
-欢迎使用优化版系列系统,并提出宝贵意见 系统将会不定期更新 版本号规则:无功能更新,只是小修小补,从小数点第二位开始,如1.01,1.02,小功能更新从小数点第一位开始,如1.1,1.2,大功能更新或上游大版本升级直接更新大版本号,如1.0,2.0,3.0 本系列系统旨在为用户提供免除痛苦,开箱即用,干净轻量,不夹带私货,靠近上游的linux修改定制版
-										
-					</div>
-				</td>
-            </tr>
-        </table>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>优化版Linux - 开箱即用，纯净高效</h1>
+        </div>
+        <div class="nav">
+            <a href="#intro">系统介绍</a>
+            <a href="#features">系统特性</a>
+            <a href="#software">预装软件</a>
+            <a href="#download">下载链接</a>
+            <a href="#install">安装教程</a>
+            <a href="#donation">捐赠支持</a>
+        </div>
+        <div class="content">
+            <div class="main-content">
+                <h2 id="intro">系统介绍</h2>
+                <img src="1.png" width="100%">
+                <img src="2.png" width="100%">
+                <p>本次更新主要内容：</p>
+                <ul class="feature-list">
+                    <li>升级到Debian Sid 全新从零构建</li>
+                    <li>去除一切美化效果，采用TraditioalOk(原gnome2里的clearlooks)为默认主题，加快运行速度，提高性能和界面辨识度，适合专业人士使用</li>
+                    <li>进一步进行了精简，去除不必要的内容，减少资源浪费</li>
+                    <li>LiveCD默认使用root账户登录，方便进行系统管理，建议一定要慎重操作，安装到硬盘还是需要创建普通用户</li>
+                    <li>修复了一些已知问题</li>
+                </ul>
+                
+                <h2 id="features">系统特性</h2>
+                <ul class="feature-list">
+                    <li>预装常用驱动程序</li>
+                    <li>基于Debian testing，滚动更新，软件始终保持最新</li>
+                    <li>稳定性高，真机实测，Debian是一个以稳定性著称的发行版</li>
+                    <li>集成常用软件，包括办公，网页浏览，图片处理，输入法等，开箱即用</li>
+                    <li>完全纯净，无广告，无捆绑</li>
+                    <li>人性化操作，采用广受欢迎的GNOME 2桌面的延续-MATE桌面环境，经典易于上手</li>
+                    <li>采用定制的Xfce和i3wm，无缝切换，提高效率</li>
+                    <li>轻量高效，占用资源低，可以充分发挥电脑性能</li>
+                </ul>
+                
+                <h2 id="software">预装的部分常用软件</h2>
+                <ul class="software-list">
+                    <li>办公：LibreOffice</li>
+                    <li>浏览器：火狐浏览器</li>
+                    <li>邮件：Thunderbird</li>
+                    <li>视频播放器：SMPlayer</li>
+                    <li>音频播放器：Rhythmbox</li>
+                    <li>命令查询：tldr</li>
+                    <li>输入法：Fcitx5</li>
+                    <li>星火应用商店，具有大量国人常用软件如QQ，微信，WPS等，还可以用aptss命令行工具安装星火商店和软件源中的软件，类似AUR助手</li>
+                </ul>
+                
+                <h2>简单上手. 适合新手使用</h2>
+                <p>新手尝试Linux时可以一试，不喜勿喷, 基本上能做到开箱即用，想在真机上装Debian的新手可以试试。</p>
+                
+                <div class="install-instructions">
+                    <h2 id="install">安装教程</h2>
+                    <p>先在U盘内安装<a href="https://www.ventoy.net" target="_blank">Ventoy</a>，安装好后将镜像复制到U盘分区内。</p>
+                    
+                    <div class="install-indent">
+                        <p>从U盘启动，选择"sulet-optimized-debian-live-sid-v5-amd64.iso"启动项。</p>
+                        <p>启动后，选择最上面第一项回车。</p>
+                        <p>启动后，点击Application-System Tools里面的"Install Debian"就可以安装了，具体步骤详见Manjaro安装教程视频</p>
+                    </div>
+                    
+                    <h3>注意事项</h3>
+                    <ul class="install-indent">
+                        <li>本镜像提供MATE桌面环境以及i3wm窗口管理器，可以通过快捷键无缝切换，无需注销。</li>
+                        <li>使用快捷键Super+Shift+i切换到i3wm(平铺模式)</li>
+                        <li>使用快捷键Super+Shift+x切换回Marco(堆叠模式)</li>
+                        <li>如果快捷键不好使，可以多按几下。</li>
+                        <li>i3wm下使用i3wm快捷键，Marco下使用Marco快捷键。</li>
+                        <li>LiveCD root密码是toor。</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="version-info">
+                    <strong>v5.0.0</strong> 最新版
+                </div>
+                
+                <div class="download-section">
+                    <h2 id="download">下载链接</h2>
+                    <a href="https://caiyun.139.com/w/i/2nc6jxagXwKib" class="btn" target="_blank">下载ISO镜像</a>
+                    <div>提取码: <strong>1vd1</strong></div>
+                </div>
+                
+                <div class="donation">
+                    <h2 id="donation">捐赠支持</h2>
+                    <p>欢迎使用优化版系列系统，并提出宝贵意见。您的支持是我们持续改进的动力！</p>
+                    <a href="donation.html" class="btn">捐赠支持</a>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <p>系统将会不定期更新</p>
+                    <p>版本号规则：</p>
+                    <ul class="feature-list">
+                        <li>无功能更新，只是小修小补，从第二个小数点开始，如1.0.1,1.0.2</li>
+                        <li>小功能更新从第一个小数点开始，如1.1,1.2</li>
+                        <li>大功能更新或上游大版本升级直接更新大版本号，如1.0,2.0,3.0</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="footer">
+            <p>© 2025 优化版Linux系列 by wiwyil2tr from SULET - 开箱即用，干净轻量，不夹带私货</p>
+            <p>靠近上游的Linux修改定制版</p>
+            <p>本系统是基于Debian的非官方定制版本，仅用于学习交流和测试目的。我们不对系统可能带来的风险或损失负责，包括但不限于数据丢失、系统故障或安全漏洞等问题。</p>
+            <p>本系统无担保，使用者需自行承担使用风险。请在使用前备份重要数据，并确保理解如何使用Linux系统。</p>
+        </div>
     </div>
-<!--	<div class="odin">
-</div> -->
-
-    </div>
-	</br>
-	<hr align="center" size="h3" width="100%" color="#ffffff" />
-<p align="center"><font face=sans color="#ffffff">这是Debian的一个非官方定制版本</font></head></p>
-
-<p align="center"><font face=sans color="#ffffff">Debian 官网:<a href="https://manjaro.org"> https://debian.org</a></font></head></p>
-<p align="center"><font face=sans color="#ffffff">wiwyil2tr 2024</font></head></p>
-
 </body>
 </html>
