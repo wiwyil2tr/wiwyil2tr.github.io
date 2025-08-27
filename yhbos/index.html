@@ -145,6 +145,36 @@
             margin: 20px 0;
             border-radius: 5px;
         }
+        /* 新增的表格样式 */
+        .system-requirements {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        .system-requirements th, .system-requirements td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        .system-requirements th {
+            background-color: #577db6;
+            color: white;
+            font-weight: bold;
+        }
+        .system-requirements tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .system-requirements tr:hover {
+            background-color: #f1f1f1;
+        }
+        .requirements-header {
+            background: linear-gradient(to right, #88a5d1, #577db6);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -154,6 +184,7 @@
         </div>
         <div class="nav">
             <a href="#intro">系统介绍</a>
+            <a href="#requirements">系统要求</a>
             <a href="#features">系统特性</a>
             <a href="#software">预装软件</a>
             <a href="#download">下载链接</a>
@@ -167,12 +198,54 @@
                 <img src="2.png" width="100%">
                 <p>本次更新主要内容：</p>
                 <ul class="feature-list">
+                    <li>中文改用文泉驿字体，更加轻量</li>
+                    <li>修复LibreOffice汉化不完全的问题</li>
+                    <li>减小iso体积，仅3.13GB, 低于Debian官方lxde的livecd（最小的桌面livecd）</li>
+                </ul>
+                <p>5.0更新主要内容：</p>
+                <ul class="feature-list">
                     <li>升级到Debian Sid 全新从零构建</li>
                     <li>去除一切美化效果，采用TraditioalOk(原gnome2里的clearlooks)为默认主题，加快运行速度，提高性能和界面辨识度，适合专业人士使用</li>
                     <li>进一步进行了精简，去除不必要的内容，减少资源浪费</li>
                     <li>LiveCD默认使用root账户登录，方便进行系统管理，建议一定要慎重操作，安装到硬盘还是需要创建普通用户</li>
                     <li>修复了一些已知问题</li>
                 </ul>
+                
+                <!-- 系统要求表格 -->
+                <div class="requirements-header">
+                    <h2 id="requirements">系统要求</h2>
+                </div>
+                <table class="system-requirements">
+                    <thead>
+                        <tr>
+                            <th>组件</th>
+                            <th>最低要求</th>
+                            <th>推荐要求</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>处理器</td>
+                            <td>X86-64 CPU 1GHz</td>
+                            <td>X86-64 多核 CPU 2GHz 以上</td>
+                        </tr>
+                        <tr>
+                            <td>内存</td>
+                            <td>2GB</td>
+                            <td>4GB 以上</td>
+                        </tr>
+                        <tr>
+                            <td>硬盘空间</td>
+                            <td>10GB</td>
+                            <td>30GB 以上</td>
+                        </tr>
+                        <tr>
+                            <td>其他</td>
+                            <td>支持 USB 接口</td>
+                            <td>支持 USB 3.0 接口，连接到互联网</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
                 <h2 id="features">系统特性</h2>
                 <ul class="feature-list">
@@ -189,11 +262,10 @@
                 <h2 id="software">预装的部分常用软件</h2>
                 <ul class="software-list">
                     <li>办公：LibreOffice</li>
-                    <li>浏览器：火狐浏览器</li>
+                    <li>浏览器：火狐浏览器（默认预装esr版本，同时支持最新版）</li>
                     <li>邮件：Thunderbird</li>
                     <li>视频播放器：SMPlayer</li>
                     <li>音频播放器：Rhythmbox</li>
-                    <li>命令查询：tldr</li>
                     <li>输入法：Fcitx5</li>
                     <li>星火应用商店，具有大量国人常用软件如QQ，微信，WPS等，还可以用aptss命令行工具安装星火商店和软件源中的软件，类似AUR助手</li>
                 </ul>
@@ -226,15 +298,22 @@
             
             <div class="sidebar">
                 <div class="version-info">
-                    <strong>v5.0.0</strong> 最新版
+                    <strong>v5.1.0</strong> 最新版
                 </div>
                 
                 <div class="download-section">
                     <h2 id="download">下载链接</h2>
-                    <a href="https://caiyun.139.com/w/i/2nc6jxagXwKib" class="btn" target="_blank">下载ISO镜像</a>
-                    <div>提取码: <strong>1vd1</strong></div>
+                    <a href="https://caiyun.139.com/w/i/2prAJy9i3MAet" class="btn" target="_blank">下载ISO镜像</a>
+                    <div>提取码: <strong>y92t</strong></div>
                 </div>
-                
+                                <div class="download-section">        
+                                 <h2 id="download">Github开源地址</h2>
+                    <a href="github.com/wiwyil2tr/optimizeddebian" class="btn" target="_blank">Github开源地址</a>
+                                
+                                </div>
+
+
+                https://github.com/wiwyil2tr/optimizeddebian/
                 <div class="donation">
                     <h2 id="donation">捐赠支持</h2>
                     <p>欢迎使用优化版系列系统，并提出宝贵意见。您的支持是我们持续改进的动力！</p>
