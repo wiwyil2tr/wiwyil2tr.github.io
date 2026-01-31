@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>优化版Linux - 开箱即用的纯净体验</title>
+    <title>优化版Linux - 开箱即用，纯净高效</title>
     <style>
         body {
             font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
@@ -146,16 +146,201 @@
             border-radius: 5px;
         }
        
-      
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th {
+            background-color: #e6e6e6;
+            color: #333;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #cccccc;
+        }
+        td {
+            padding: 8px;
+            border: 1px solid #cccccc;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* 更新高亮样式 */
+        .update-highlight {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #577db6;
+        }
+        
+        .known-issue {
+            background-color: #fff3f3;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #cc0000;
+        }
+        
+        /* 幻灯片样式 */
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 30px auto;
+            background: #f9f9f9;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background: #f0f0f0;
+            display: block;
+        }
+        
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .slideshow-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        
+        .slideshow-btn {
+            background: rgba(87, 125, 182, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .slideshow-btn:hover {
+            background: rgba(87, 125, 182, 1);
+            transform: scale(1.1);
+        }
+        
+        .slideshow-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .dot.active {
+            background: #577db6;
+            transform: scale(1.2);
+        }
+        
+        .slideshow-auto {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .auto-toggle {
+            width: 40px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .auto-toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            background: #577db6;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .auto-toggle.active::after {
+            transform: translateX(20px);
+        }
+        
+        .slideshow-title {
+            text-align: center;
+            color: #577db6;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 5px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>优化版Linux - 开箱即用，纯净高效</h1>
+            <div class="subtitle">-- By wiwyil2tr@mail.ru --</div>
         </div>
         <div class="nav">
             <a href="#intro">系统介绍</a>
+            <a href="#screenshots">系统截图</a>
             <a href="#requirements">系统要求</a>
             <a href="#features">系统特性</a>
             <a href="#software">预装软件</a>
@@ -165,55 +350,136 @@
         </div>
         <div class="content">
             <div class="main-content">
-                <h2 id="intro">系统介绍</h2>
-                <img src="1.png" width="100%">
-                <img src="2.png" width="100%">
-                <p>本次更新主要内容：</p>
-                <ul class="feature-list">
-                    <li>中文改用文泉驿字体，更加轻量</li>
-                    <li>修复LibreOffice汉化不完全的问题</li>
-                    <li>减小iso体积，仅3.13GB, 低于Debian官方lxde的livecd（最小的桌面livecd）</li>
-                </ul>
-                <p>5.0更新主要内容：</p>
-                <ul class="feature-list">
-                    <li>升级到Debian Sid 全新从零构建</li>
-                    <li>去除一切美化效果，采用TraditioalOk(原gnome2里的clearlooks)为默认主题，加快运行速度，提高性能和界面辨识度，适合专业人士使用</li>
-                    <li>进一步进行了精简，去除不必要的内容，减少资源浪费</li>
-                    <li>LiveCD默认使用root账户登录，方便进行系统管理，建议一定要慎重操作，安装到硬盘还是需要创建普通用户</li>
-                    <li>修复了一些已知问题</li>
-                </ul>
-                
-                <div>
-                    <h2>系统要求</h2>
+             <h2 id="screenshots" class="slideshow-title">系统截图</h2>
+                <div class="slideshow-container">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="https://storage.deepin.org/thread/202601310552346993_screenyhb.jpg" alt="优化版Linux桌面">
+                            <div class="slide-caption">优化版Linux桌面环境</div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://storage.deepin.org/thread/202601310552376853_screenwtt.jpg" alt="天气功能">
+                            <div class="slide-caption">天气功能展示</div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://storage.deepin.org/thread/202601310552388750_screenvar.jpg" alt="WTTR变量设置">
+                            <div class="slide-caption">WTTR变量设置</div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://storage.deepin.org/thread/202601310552394371_screensett.jpg" alt="系统设置">
+                            <div class="slide-caption">系统设置界面</div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://storage.deepin.org/thread/20260131055240526_screensddm.jpg" alt="SDDM显示管理器">
+                            <div class="slide-caption">SDDM显示管理器</div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://storage.deepin.org/thread/202601310552427121_screenlun.jpg" alt="农历功能">
+                            <div class="slide-caption">农历功能展示</div>
+                        </div>
+                        <div class="slide">
+                            <img src="https://storage.deepin.org/thread/20260131055243893_screencmd.jpg" alt="命令行界面">
+                            <div class="slide-caption">命令行界面</div>
+                        </div>
+                    </div>
+
+                    <div class="slideshow-controls">
+                        <button class="slideshow-btn prev-btn">❮</button>
+                        <button class="slideshow-btn next-btn">❯</button>
+                    </div>
+
+                    <div class="slideshow-dots">
+                        <!-- 点状指示器将通过JavaScript生成 -->
+                    </div>
+
+                    <div class="slideshow-auto">
+                        <span>自动播放</span>
+                        <div class="auto-toggle active"></div>
+                    </div>
                 </div>
+
+                <h2 id="intro">系统介绍</h2>
+                
+                <div class="update-highlight">
+                    <h3>本次更新(v6.1)主要内容</h3>
+                    <ul class="feature-list">
+                        <li>修复`/etc/environment: drsed: not found`问题</li>
+                        <li>更新Debian到13.3最新版</li>
+                        <li>拥抱Qt, 默认桌面改为改用轻量级LXQt桌面环境资源占用极低，运行速度极快，常用软件也尽量改用Qt版</li>
+                        <li>仍然采用经典GNOME2布局</li>
+                        <li>采用KDE4默认的Oxygen主题</li>
+                        <li>星火商店改为终端版</li>
+                        <li>改用sddm显示管理器</li>
+                        <li>新增天气功能和WTTR变量，可以通过WTTR变量调整位置</li>
+                        <li>新增面板天气功能和WTTR变量，可以通过WTTR变量调整位置，点击可查看详细</li>
+                        <li>新增面板ccal农历功能，点击时间可查看农历，终端输入ccal -u 2026可查看全年</li>
+                        <li>新增livecd普通用户`live`, 密码`live`, 不再以root登录</li>
+                        <li>进一步优化 ISO 体积，仅 2GB</li>
+                    </ul>
+                </div>
+                
+                <div class="known-issue">
+                    <h3>已知问题</h3>
+                    <p>文件关联存在问题，可通过图示设置修复</p>
+                </div>
+                
+                <div class="update-highlight">
+                    <h3>v6.0更新主要内容：</h3>
+                    <ul class="feature-list">
+                        <li>基于 debian 13 stable，全新构建</li>
+                        <li>重新规划路线，重回 Stable，注重优化而不是求新，更好的适配更多的设备以及适应正式的办公和生产环境</li>
+                        <li>去掉 i3wm（大部分人用不到平铺，需要的通常会用自己的配置方案）</li>
+                        <li>默认桌面改为xfce, 定制版的mate存在一些bug而且功能较少，因此去掉</li>
+                        <li>进一步精简和优化系统组件，减少资源占用，提升性能</li>
+                        <li>进一步优化 ISO 体积，仅 2.2GB, 比上一版减少约1G（远低于 Debian 官方 LiveCD）</li>
+                        <li>修复 WiFi 连接相关问题</li>
+                        <li>增加安装后配置脚本，安装后运行 `sudo postinstall` 即可进一步安装驱动及其他优化，支持安装显卡、打印机等驱动以及在线或离线安装 WiFi 驱动，SSD优化等</li>
+                        <li>增加文件备份恢复脚本, 运行 `bak` 即可使用， 由团队成员TyfonSu开发（详见：<a href="https://github.com/TyfonSu/backup_script" target="_blank">https://github.com/TyfonSu/backup_script</a>）</li>
+                        <li>增加 gdebi 软件包安装工具，支持双击 deb 包安装</li>
+                        <li>主题采用xfce下广受欢迎的greybird</li>
+                        <li>更换新的壁纸，包括一套自制壁纸，xfce自带壁纸，debian壁纸，mate壁纸</li>
+                        <li>增加grub主题</li>
+                        <li>根据Debian的商标政策，为避免与官方版本混淆，项目英文名称正式定为"yhbos", 中文名为"优化版Linux"，去除了"Debian"商标</li>
+                        <li>注：此版本 (v6.0) 为重大更新，往期版本 (v1-v5 全部系列) 将停止下载及支持，更新至本版本需要重装系统，可以通过 aptbackup 脚本备份和恢复软件包（<a href="https://github.com/wiwyil2tr/aptbackup" target="_blank">https://github.com/wiwyil2tr/aptbackup</a>）</li>
+                    </ul>
+                </div>
+                
+
+                
+                <h2 id="requirements">系统要求</h2>
                 <table>
                     <thead>
                         <tr>
                             <th>组件</th>
-                            <th>最低要求</th>
-                            <th>推荐要求</th>
+                            <th>最低配置（仅安装系统）</th>
+                            <th>基本配置（可使用完整功能）</th>
+                            <th>推荐配置（可发挥极致性能）</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>处理器</td>
-                            <td>X86-64 CPU 1GHz</td>
-                            <td>X86-64 多核 CPU 2GHz 以上</td>
+                            <td>1GHz以上，64位</td>
+                            <td>1GHz以上，64位</td>
+                            <td>多核处理器 2GHz以上，64位</td>
                         </tr>
                         <tr>
                             <td>内存</td>
-                            <td>2GB</td>
-                            <td>4GB 以上</td>
+                            <td>1GB以上</td>
+                            <td>2GB以上</td>
+                            <td>4GB以上</td>
                         </tr>
                         <tr>
                             <td>硬盘空间</td>
-                            <td>10GB</td>
-                            <td>30GB 以上</td>
+                            <td>10GB以上</td>
+                            <td>20GB以上</td>
+                            <td>30GB以上</td>
                         </tr>
                         <tr>
-                            <td>其他</td>
-                            <td>支持 USB 接口</td>
-                            <td>支持 USB 3.0 接口，1920x1080分辨率，连接到互联网</td>
+                            <td>分辨率</td>
+                            <td>800x600</td>
+                            <td>1024x768</td>
+                            <td>1920x1080</td>
                         </tr>
                     </tbody>
                 </table>
@@ -221,28 +487,30 @@
                 <h2 id="features">系统特性</h2>
                 <ul class="feature-list">
                     <li>预装常用驱动程序</li>
-                    <li>基于Debian sid，滚动更新，软件始终保持最新</li>
-                    <li>稳定性高，真机实测，Debian是一个以稳定性著称的发行版</li>
+                    <li>基于Debian stable，稳如泰山</li>
+                    <li>高度安全稳定，真机实测，Debian是一个以稳定性著称的发行版</li>
                     <li>集成常用软件，包括办公，网页浏览，图片处理，输入法等，开箱即用</li>
                     <li>完全纯净，无广告，无捆绑</li>
-                    <li>人性化操作，采用广受欢迎的GNOME 2桌面的延续-MATE桌面环境，经典易于上手</li>
-                    <li>采用定制的mate和i3wm，无缝切换，提高效率</li>
-                    <li>轻量高效，占用资源低，可以充分发挥电脑性能</li>
+                    <li>人性化操作，采用广受欢迎的XFCE桌面环境，轻量经典易于上手</li>
+                    <li>采用定制的xfce，包含优化快捷键，rofi(Super+d唤出)等特性</li>
+                    <li>轻量高效，占用资源低，加快了平台运行速度，可以充分发挥电脑性能</li>
                 </ul>
                 
                 <h2 id="software">预装的部分常用软件</h2>
                 <ul class="software-list">
                     <li>办公：LibreOffice</li>
-                    <li>浏览器：火狐浏览器（默认预装esr版本，同时支持最新版）</li>
-                    <li>邮件：Thunderbird</li>
+                    <li>浏览器：火狐浏览器(Firefox)</li>
+                    <li>邮件：雷鸟邮件(Thunderbird)</li>
                     <li>视频播放器：SMPlayer</li>
                     <li>音频播放器：Rhythmbox</li>
                     <li>输入法：Fcitx5</li>
+                    <li>图片处理：GIMP</li>
+                    <li>铜豌豆(atzlinux)软件源，包含一些常用常用中文软件</li>
                     <li>星火应用商店，具有大量国人常用软件如QQ，微信，WPS等，还可以用aptss命令行工具安装星火商店和软件源中的软件，类似AUR助手</li>
                 </ul>
                 
-                <h2>简单上手. 适合新手使用</h2>
-                <p>新手尝试Linux时可以一试，不喜勿喷, 基本上能做到开箱即用，想在真机上装Debian的新手可以试试。</p>
+                <h2>简单上手，适合新手使用</h2>
+                <p>新手尝试Linux时可以一试，不喜勿喷, 基本上能做到开箱即用，想在真机上装Debian的新手可以试试，尤其适合追求效率的新机器或者老机器。</p>
                 <p>优化版系统云湖交流群ID: 342741928</p>
                 
                 <div class="install-instructions">
@@ -250,39 +518,41 @@
                     <p>先在U盘内安装<a href="https://www.ventoy.net" target="_blank">Ventoy</a>，安装好后将镜像复制到U盘分区内。</p>
                     
                     <div class="install-indent">
-                        <p>从U盘启动，选择"sulet-optimized-debian-live-sid-v5-amd64.iso"启动项。</p>
-                        <p>启动后，选择最上面第一项回车。</p>
-                        <p>启动后，登录, 用户名:root, 密码:toor 点击Application-System Tools里面的"Install Debian"就可以安装了，具体步骤详见Manjaro安装教程视频</p>
+                        <p>从U盘启动，选择"yhbos-v6.1-amd64.iso"启动项。</p>
+                        <p>启动时，选择最上面第一项回车。</p>
+                        <p>启动后，登录, 用户名:live, 密码:live</p>
+                        <p>建议使用Applications-System Tools-Gparted工具先分区，然后在安装程序中挂载</p>
+                        <p>点击桌面上面的"Install Debian"图标就可以安装了，具体步骤详见Manjaro安装教程视频</p>
                     </div>
                     
                     <h3>注意事项</h3>
                     <ul class="install-indent">
-                        <li>本镜像提供MATE桌面环境以及i3wm窗口管理器，可以通过快捷键无缝切换，无需注销。</li>
-                        <li>使用快捷键Super+Shift+i切换到i3wm(平铺模式)</li>
-                        <li>使用快捷键Super+Shift+x切换回Marco(堆叠模式)</li>
-                        <li>如果快捷键不好使，可以多按几下。</li>
-                        <li>i3wm下使用i3wm快捷键，Marco下使用Marco快捷键。</li>
-                        <li>LiveCD root密码是toor。</li>
+                        <li>LiveCD root密码是 `toor` 。安装过程中会自动禁用root账户，安装时创建的用户为管理员帐户，可提权，安装后可使用sudo获取root权限</li>
+                        <li>如果分辨率过低，默认的特色壁纸不会显示，会还原到备用的xfce默认壁纸，可以在桌面设置里重新设置</li>
                     </ul>
                 </div>
+                
+                <h2>官方网站</h2>
+                <p>官网： <a href="https://wiwyil2tr.github.io/yhbos/" target="_blank">https://wiwyil2tr.github.io/yhbos/</a></p>
             </div>
             
             <div class="sidebar">
                 <div class="version-info">
-                    <strong>v5.1.0</strong> 最新版
+                    <strong>v6.1.0 新春贺岁版</strong> 最新版
                 </div>
                 
                 <div class="download-section">
                     <h2 id="download">下载链接</h2>
-                    <a href="https://caiyun.139.com/w/i/2prAJy9i3MAet" class="btn" target="_blank">下载ISO镜像</a>
-                    <div>提取码: <strong>y92t</strong></div>
+                    <p><strong>文件名：</strong> yhbos-v6.1-amd64.iso</p>
+                    <p><strong>大小：</strong> 2G</p>
+                    <a href="https://yun.139.com/shareweb/#/w/i/2sUfBen3Lnpja" class="btn" target="_blank">下载ISO镜像</a>
+                    <div>提取码: <strong>mhcs</strong></div>
                 </div>
-                                <div class="download-section">        
-                                 <h2 id="download">开源地址</h2>
-                    <a href="https://github.com/wiwyil2tr/optimizeddebian" class="btn" target="_blank">Github</a>
-                                
-                                </div>
-
+                
+                <div class="download-section">        
+                    <h2>开源地址</h2>
+                    <a href="https://github.com/wiwyil2tr/yhbos" class="btn" target="_blank">Github</a>
+                </div>
 
                 <div class="donation">
                     <h2 id="donation">捐赠支持</h2>
@@ -290,10 +560,10 @@
                     <a href="donation.html" class="btn">捐赠支持</a>
                 </div>
                 
-                <div style="text-align: center; margin-top: 20px;">
-                    <p>系统将会不定期更新</p>
+                <div style="text-align: center; margin-top: 20px; padding: 10px; background-color: #f9f9f9; border: 1px solid #cccccc; border-radius: 5px;">
+                    <p><strong>系统将会不定期更新</strong></p>
                     <p>版本号规则：</p>
-                    <ul class="feature-list">
+                    <ul class="feature-list" style="text-align: left;">
                         <li>无功能更新，只是小修小补，从第二个小数点开始，如1.0.1,1.0.2</li>
                         <li>小功能更新从第一个小数点开始，如1.1,1.2</li>
                         <li>大功能更新或上游大版本升级直接更新大版本号，如1.0,2.0,3.0</li>
@@ -310,5 +580,128 @@
             <p>本系统无担保，使用者需自行承担使用风险。请在使用前备份重要数据，并确保理解如何使用Linux系统。</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const dotsContainer = document.querySelector('.slideshow-dots');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const autoToggle = document.querySelector('.auto-toggle');
+            const slidesContainer = document.querySelector('.slides');
+            
+            let currentSlide = 0;
+            let slideInterval;
+            let autoPlay = true;
+            
+            // 初始化点状指示器
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+            
+            // 更新幻灯片位置
+            function updateSlidePosition() {
+                slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // 更新点状指示器
+                document.querySelectorAll('.dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // 跳转到指定幻灯片
+            function goToSlide(index) {
+                currentSlide = index;
+                if (currentSlide < 0) currentSlide = slides.length - 1;
+                if (currentSlide >= slides.length) currentSlide = 0;
+                updateSlidePosition();
+                resetAutoPlay();
+            }
+            
+            // 下一张幻灯片
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+            
+            // 上一张幻灯片
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+            
+            // 重置自动播放
+            function resetAutoPlay() {
+                if (autoPlay) {
+                    clearInterval(slideInterval);
+                    startAutoPlay();
+                }
+            }
+            
+            // 开始自动播放
+            function startAutoPlay() {
+                slideInterval = setInterval(nextSlide, 5000); // 5秒切换一次
+            }
+            
+            // 切换自动播放
+            function toggleAutoPlay() {
+                autoPlay = !autoPlay;
+                autoToggle.classList.toggle('active', autoPlay);
+                
+                if (autoPlay) {
+                    startAutoPlay();
+                } else {
+                    clearInterval(slideInterval);
+                }
+            }
+            
+            // 事件监听
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            autoToggle.addEventListener('click', toggleAutoPlay);
+            
+            // 键盘控制
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === ' ') {
+                    toggleAutoPlay();
+                }
+            });
+            
+            // 触摸滑动支持
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            slidesContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            slidesContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // 向左滑动，下一张
+                        nextSlide();
+                    } else {
+                        // 向右滑动，上一张
+                        prevSlide();
+                    }
+                }
+            }
+            
+            // 开始自动播放
+            startAutoPlay();
+        });
+    </script>
 </body>
 </html>
