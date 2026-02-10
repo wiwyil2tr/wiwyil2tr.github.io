@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>优化版Linux v6.1 (trixie) 极速版 新春贺岁版</title>
+    <style>
+        /* 强制黑底白字，并保留原有文字样式 */
+        body {
+            background-color: #000 !important;
+            color: #fff !important;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+        /* 确保链接在黑底下可见 */
+        a { color: #4da6ff; }
+        /* 确保表格边框可见 */
+        table, th, td { border: 1px solid #fff; }
+        
+        /* 烟花画布样式 */
+        #fireworks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* 置于底层 */
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
+    <canvas id="fireworks-canvas"></canvas>
+
     <h1>优化版Linux v6.1 (trixie) 极速版 新春贺岁版</h1>
     <p>--By wiwyil2tr@mail.ru</p>
     <p>注：此版本为极速版，标准版详见：<a href="https://wiwyil2tr.github.io/yhbos">https://wiwyil2tr.github.io/yhbos</a></p>
@@ -88,5 +115,77 @@
      <a href="donation.html">点此捐赠支持</a>
     
     <p>欢迎使用优化版系列系统,并提出宝贵意见 系统将会不定期更新 版本号规则:无功能更新,只是小修小补,从第二个小数点开始,如1.0.1,1.0.2,小功能更新从第一个小数点开始,如1.1,1.2,大功能更新或上游大版本升级直接更新大版本号,如1.0,2.0,3.0 本系列系统旨在为用户提供免除痛苦,开箱即用,干净轻量,不夹带私货,靠近上游的linux修改定制版</p>
+
+    <script>
+        const canvas = document.getElementById('fireworks-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.velocity = {
+                    x: (Math.random() - 0.5) * 8,
+                    y: (Math.random() - 0.5) * 8
+                };
+                this.alpha = 1;
+                this.friction = 0.95;
+            }
+
+            draw() {
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+
+            update() {
+                this.velocity.x *= this.friction;
+                this.velocity.y *= this.friction;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= 0.01;
+            }
+        }
+
+        function createFirework() {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height * 0.5;
+            const color = `hsl(${Math.random() * 360}, 50%, 50%)`;
+            for (let i = 0; i < 30; i++) {
+                particles.push(new Particle(x, y, color));
+            }
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            if (Math.random() < 0.05) createFirework();
+
+            particles.forEach((particle, index) => {
+                if (particle.alpha <= 0) {
+                    particles.splice(index, 1);
+                } else {
+                    particle.update();
+                    particle.draw();
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
 </body>
 </html>
