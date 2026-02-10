@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>优化版Linux v6.1 (trixie) 极速版 新春贺岁版</title>
+</head>
+<body>
+    <h1>优化版Linux v6.1 (trixie) 极速版 新春贺岁版</h1>
+    <p>--By wiwyil2tr@mail.ru</p>
+    <p>注：此版本为极速版，标准版详见：<a href="https://wiwyil2tr.github.io/yhbos">https://wiwyil2tr.github.io/yhbos</a></p>
+    
+    <img src="https://storage.deepin.org/thread/20260210133928125_20260210_21h28m30s_grim.png" alt="截图">
+    
+    <h2>本次更新主要内容</h2>
+    <ul>
+        <li>升级Debian到最新(13.3)</li>
+        <li>拥抱wayland, 改用sway, 特点是纯命令操作，极致轻量，适合极客用户</li>
+        <li>新增面板ccal农历功能，点击时间可查看农历，终端输入ccal -u 2026可查看全年</li>
+        <li>新增livecd普通用户`live`, 密码`live`, 不再以root登录</li>
+        <li>其余详见标准版</li>
+    </ul>
+    
+    <h2>版本特点</h2>
+    <ul>
+        <li>使用轻量级sway窗口管理器，资源占用极低，运行速度极快</li>
+        <li>集成轻量级Falkon浏览器，仅几M大小</li>
+        <li>集成Neomutt邮件客户端</li>
+        <li>星火商店改为终端版</li>
+        <li>含有优化的vim, zsh, ranger, sway等</li>
+        <li>极致精简，ISO体积仅1.5GB，比标准版减少32%</li>
+        <li>专为极端条件设计，超级省电，老旧设备，性能要求极高的专业用户，或者喜欢命令操作的极客首选</li>
+        <li>仍然保留常用软件，保证开箱即用的实用性</li>
+        <li>尽量采用轻量级组件，不排除命令界面的组件，适合对Linux有一定了解，熟悉i3wm-sway快捷键，Linux命令的用户</li>
+    </ul>
+    
+    <h2>为什么不叫"精简版"？</h2>
+    <ul>
+        <li>仍有进一步精简空间，但为保证实用性而保留核心组件</li>
+        <li>"极速版"更准确反映其性能优势和定位</li>
+        <li>定位专业用户和极端环境，而非简单的功能删减</li>
+        <li>不支持32位老旧机器，仅面向64位硬件优化</li>
+    </ul>
+    
+    <h2>安装教程</h2>
+    <p>先在U盘内安装Ventoy，安装好后将镜像复制到U盘分区内。</p>
+    <p>从U盘启动，选择"yhbos-v6-amd64-lite.iso"启动项。</p>
+    <p>启动时，选择最上面第一项回车。</p>
+    <p>启动后，登录, 用户名:live, 密码:live</p>
+    <p>建议使用Gparted工具先分区，然后在安装程序中挂载</p>
+    <p>终端输入sudo -E calamares可以安装了，具体步骤详见Manjaro安装教程视频</p>
+    
+    <h2>系统要求</h2>
+    <table border="1">
+        <tr>
+            <th>组件</th>
+            <th>最低配置（仅安装系统，推荐配置参考标准版）</th>
+        </tr>
+        <tr>
+            <td>处理器</td>
+            <td>1GHz以上，64位</td>
+        </tr>
+        <tr>
+            <td>内存</td>
+            <td>615MB以上</td>
+        </tr>
+        <tr>
+            <td>硬盘空间</td>
+            <td>6GB以上</td>
+        </tr>
+    </table>
+    
+    <h2>注意事项</h2>
+    <ul>
+        <li>本版为番外篇，更新随缘，主线为标准版</li>
+        <li>LiveCD live密码是 live</li>
+        <li>默认shell为sh, 需通过chsh手动切换bash或zsh</li>
+        <li>super+enter打开终端，其余快捷键详见配置文件和 <a href="https://i3wm.org/docs/userguide.html">https://i3wm.org/docs/userguide.html</a></li>
+        <li>系统自带锁屏，输入密码回车解锁</li>
+    </ul>
+    
+    <h2>下载地址</h2>
+    <p>链接: <a href="https://yun.139.com/shareweb/#/w/i/2sUfErB8Tgwdq">https://yun.139.com/shareweb/#/w/i/2sUfErB8Tgwdq</a> 提取码:gode</p>
+    
+    <h2>开源地址</h2>
+    <p>Github</p>
+    
+    <h2>捐赠支持</h2>
+     <a href="捐赠支持">donation.html</a>
+    
+    <p>欢迎使用优化版系列系统,并提出宝贵意见 系统将会不定期更新 版本号规则:无功能更新,只是小修小补,从第二个小数点开始,如1.0.1,1.0.2,小功能更新从第一个小数点开始,如1.1,1.2,大功能更新或上游大版本升级直接更新大版本号,如1.0,2.0,3.0 本系列系统旨在为用户提供免除痛苦,开箱即用,干净轻量,不夹带私货,靠近上游的linux修改定制版</p>
+</body>
+</html>
