@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>优化版Linux v6.1 (trixie) 极速版 新春贺岁版</title>
     <style>
-        /* 强制黑底白字，并保留原有文字样式 */
+        /* 白底黑字 */
         body {
             background-color: #fff !important;
             color: #000 !important;
@@ -12,19 +12,22 @@
             padding: 20px;
             position: relative;
         }
-        /* 确保链接在黑底下可见 */
         a { color: #4da6ff; }
-        /* 确保表格边框可见 */
-        table, th, td { border: 1px solid #fff; }
+        /* 表格边框深色可见 */
+        table, th, td { 
+            border: 1px solid #333; 
+            border-collapse: collapse;
+            padding: 4px;
+        }
         
-        /* 烟花画布样式 */
+        /* 烟花画布置于底层 */
         #fireworks-canvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* 置于底层 */
+            z-index: -1;
             pointer-events: none;
         }
     </style>
@@ -192,7 +195,8 @@
         }
 
         function animate() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            // 使用半透明白色填充画布，使粒子逐渐淡出，同时保持白底背景
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             if (Math.random() < 0.05) createFirework();
